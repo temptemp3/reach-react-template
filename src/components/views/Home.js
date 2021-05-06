@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
 
 import ConnectWallet from "../reach/ConnectWallet";
 import { Context } from "../../Context";
@@ -13,7 +12,6 @@ import { AttachButton, DeployButton } from "../reach/DeployAttach";
 const Home = () => {
 
     const [account, , , , ,] = useContext(Context);
-    const [wager, setWager] = useState(0);
 
     return account !== "" ? (
         <Container className="h-100">
@@ -26,19 +24,7 @@ const Home = () => {
                             <Card.Text>
                                 Deploy your own application
                             </Card.Text>
-                            <Form.Group>
-                                <Form.Label>Wager amount</Form.Label>
-                                <Form.Control
-                                    value={wager}
-                                    onChange={(e) => setWager(e.target.value)}
-                                    type="number"
-                                    placeholder="Enter wager" />
-                            </Form.Group>
-                            <DeployButton ctcArgs={[
-                                {
-                                    wager: wager,
-                                }
-                            ]} />
+                            <DeployButton />
                         </Card>
                     </Col>
                     <Col>
