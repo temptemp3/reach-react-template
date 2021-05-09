@@ -13,7 +13,6 @@ const Home = () => {
 
     const [account, , , , ,] = useContext(Context);
     const [wager, setWager] = useState(0);
-    const [wager2, setWager2] = useState(0);
 
     return account !== "" ? (
         <Container className="h-100">
@@ -45,8 +44,8 @@ const Home = () => {
     ) : (
         <Container className="mt-5">
             <h1>Please connect your wallet</h1>
-            <ConnectWallet />
-        </Container>
+            {/*             <ConnectWallet />
+ */}        </Container>
     );
 }
 

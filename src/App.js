@@ -8,6 +8,7 @@ import About from './components/views/About';
 import DeployScreen from './components/views/DeployScreen';
 import { Funder } from './components/participants/Funder';
 import { Buyer } from './components/participants/Buyer';
+import ConnectWallet from './components/reach/ConnectWallet';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/app/buyer" component={Buyer} />
           {/* <Route path="/test" component={AcceptWager} /> */}
         </Switch>
+        <ConnectWallet />
       </div>
     </Router>
   );

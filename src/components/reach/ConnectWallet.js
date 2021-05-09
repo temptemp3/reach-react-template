@@ -27,6 +27,10 @@ const ConnectWallet = () => {
         right: "2em",
     }
 
+    const fmtAddress = (acc) => {
+        const addr = acc.networkAccount.addr;
+        return "0x" + addr.substring(0, 7).toLowerCase() + "..." + addr.substring(addr.length - 6, addr.length - 1).toLowerCase();
+    }
 
 
     return Object.keys(account).length === 0 ? (
@@ -38,7 +42,12 @@ const ConnectWallet = () => {
             <img src={Algorand} alt="Algorand Logo" width="30" />
             {" "}<p className="d-inline-block mb-1 ml-1">Connect Wallet</p>
         </Button>
-    ) : <div />;
+    ) : <Button variant="dark"
+        style={buttonStyle}
+        className="position-absolute m-3"
+        size="lg">
+        <p className="d-inline-block mb-1 ml-1">{fmtAddress(account)}</p>
+    </Button>;
 }
 
 export default ConnectWallet;
