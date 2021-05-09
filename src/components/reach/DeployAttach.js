@@ -62,7 +62,7 @@ export const AttachButton = () => {
 
         console.log("Attached to the contract");
         // Uygulama sayfasına geç
-        history.push("/app/bob");
+        history.push("/app/buyer");
     }
 
     return (
